@@ -1,4 +1,4 @@
-# app_dornaGUI
+#App_dornaGUI
 App GUI para robot dorna 2 (desarollada con python,pysimplegui)
 
 La Utilidad que se le dio al robot dorna fue apoyando en el proceso de frabicacion de PCB's SMD,colocando goma en la base de componentes SMD "pesados" que pueden moverse o caerse del PCB en el proceso final de Coccion de la soldadura
