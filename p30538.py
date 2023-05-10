@@ -1,4 +1,4 @@
-#from dorna2 import dorna
+from dorna2 import Dorna
 import time
 import stop
 import threading
@@ -12,7 +12,7 @@ def p30538(self, v, a, tq, t1, t2):
     self.t1 = t1
     self.t2 = t2
 
-    robot = dorna()
+    robot = Dorna()
     ip = "dorna"
     port = 443
     robot.connect(ip, port)
@@ -390,9 +390,6 @@ def p30538(self, v, a, tq, t1, t2):
         #    robot.play(cmd="alarm",alarm=1, queue=1)
         # robot.close()
 
-def main():
-    programa = p30538()
-    return 0
 
-if __name__=='__main__':
-    main()
+if __name__ == '__main__':
+    p30538()

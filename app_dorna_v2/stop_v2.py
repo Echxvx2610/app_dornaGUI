@@ -5,19 +5,13 @@ def stop():
     global v_s
     v_s = 0
     print(v_s)
-    # return s
     robot = Dorna()
     ip = "dorna"
     port=443
     robot.connect(ip,port)
-
     robot.play(cmd="halt", id=1, accel=7.5)
     robot.play(track=True, cmd="alarm", alarm=1)
-    #paro.complete()
     print("robot Detenido")
-
-#
-# robot.play_script("stop.txt")
     robot.close()
 
 
@@ -28,10 +22,8 @@ def reset():
     robot = Dorna()
     ip = "dorna"
     port = 443
-
     robot.connect(ip, port)
     robot.play(track=True, cmd="alarm", alarm=0)
-    #r.complete()
-    #robot.play_script("reset.txt")
-
+    print("robot reseteado!")
+    
     robot.close()

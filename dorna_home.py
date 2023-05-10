@@ -1,17 +1,25 @@
-#from dorna2 import dorna
+from dorna2 import Dorna
 import time
 
 def home():
-    robot = dorna()
+    robot = Dorna()
     ip = "dorna"
     port = 443
     robot.connect(ip, port)
     print("Conectado")
 
-    mensa = robot.msg.get()
-    print(mensa)
+    #mensa = robot.msg.get()
+    #print(mensa)
+    
+    print(robot.sys())
 
-    robot.play(cmd="joint", j0=180, j1=180, j2=-142, j3=135, j4=0, id=10)
+
+
+    #z1 = \
+    robot.play(timeout=-1, cmd="joint", j0=180, j1=180, j2=-142, j3=135, j4=0, id=10)
+    print(robot.recv())
+    #z1.complete()
+
 
     print(" ")
     print(robot.sys)
@@ -51,6 +59,6 @@ def home():
     robot.close()
 
 
-#if __name__ == '__main__':
-#    zeroset()
+if __name__ == '__main__':
+    home()
 #    main()

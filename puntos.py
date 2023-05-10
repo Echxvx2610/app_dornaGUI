@@ -1,8 +1,8 @@
-#from dorna2 import dorna
+from dorna2 import Dorna
 import time
 #from test_p import puntos
 def main():
-    robot = dorna()
+    robot = Dorna()
     ip = "dorna"
     port = 443
     robot.connect(ip, port)

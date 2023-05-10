@@ -1,13 +1,13 @@
 import tkinter as tk
 from tkinter import ttk
-from dorna_home import home
-from dorna_zero import cero
-from dorna_retun import back
+from dorna_home_v2 import homming
+from dorna_zero_v2 import cero
+from dorna_return_v2 import back
 #from main import main
-from stop import stop, reset
+#from stop import stop, reset
 from tt import main
-from p8678_a0 import p8678
-from p30538 import p30538
+#from p8678_a0 import p8678
+#from p30538 import p30538
 import threading
 import queue
 from dorna2 import Dorna
@@ -200,7 +200,7 @@ class Application(tk.Frame):
 
 # orden de hacer home al robot
     def say_hi(self):
-        home()
+        homming()
         #print("Robot Encendido")
 
     def alto(self):

@@ -1,16 +1,17 @@
 #packages
 import threading
 import PySimpleGUI as sg
-from my_thread import principal
+#from my_thread import principal
 import time
 from threading import *
-from p30538 import p30538
-from p30538_1A import p30538
-from p8678_a0 import p8678
-from dorna_home import home
-from dorna_return import back
-from dorna_zero import cero
-from p31516 import p31516
+#from p30538 import p30538
+#from p30538_1A import p30538
+#from p8678_a0 import p8678
+from dorna_home_v2 import homming
+from dorna_return_v2 import back
+from dorna_zero_v2 import cero
+from stop_v2 import stop
+#from p31516 import p31516
 
 
 
@@ -37,11 +38,15 @@ def dorna_arm():
     setup=[
         [sg.Push() ,sg.Text('Seleccione un Programa' ,text_color='Black') ,sg.Push()] ,
         [sg.Push() ,
-         sg.Combo(
-             # Lista de programa
-             [['30538-1A'] ,['8678-1A'] ,['9104-1A'] ,['26156-1E'] ,['31516-1A']] ,
-             enable_events=True ,key='-COMBO-' ,size=(20 ,1)) ,  # ,sg.Button('Seleccionar',key='-SELECT-')
-         sg.Push()] ,
+        sg.Combo(
+            # Lista de programa
+             [
+                 ['30538-1A'],
+                 ['8678-1A'] ,
+                 ['9104-1A'] ,
+                 ['26156-1E'] ,
+                 ['31516-1A']
+            ] ,enable_events=True ,key='-COMBO-' ,size=(20 ,1)),sg.Push()] ,
         [sg.Text('Velocidad' ,text_color='Black')] ,
         [sg.Slider((0.0 ,500.0) ,resolution=0.1 ,tick_interval=250 ,orientation='h' ,default_value=0 ,s=(15 ,15) ,
                    key='-V-' ,enable_events=True) ,sg.Button('Set-V' ,key='-SETV-')] ,
@@ -88,7 +93,8 @@ def dorna_arm():
                        layout,
                        element_justification='c',
                        icon= r'H:\Temporal\Echevarria\proyects\PysimpleGUI\Proyectos\app_dorna\img\dorna_mini.ico',
-                       titlebar_icon= r'H:\Temporal\Echevarria\proyects\PysimpleGUI\Proyectos\app_dorna\img\dorna_mini.ico',resizable=True)
+                       titlebar_icon= r'H:\Temporal\Echevarria\proyects\PysimpleGUI\Proyectos\app_dorna\img\dorna_mini.ico',resizable=True,size=((700,550)),finalize=True)
+    window.set_min_size((250,550))
     
 
     #***************************************************************\\Bucle corre app//************************************************************************************************
@@ -173,13 +179,17 @@ def dorna_arm():
                 # hilo = Thread(target=p31516(v=spd,a=accel,tq=torq,t=goma_ch,t2=goma_g))
                 # hilo.start()
         if event == '-ZERO-':
-            cero()      
+            cero()
+            
+        if event == '-INICIALIZAR-':
+            homming()
+            
+        if event == '-REPOSO-':
+            back()
+        
+                  
     # fin del bucle
     window.close()
-
-    # notas
-    # sliders: resolution=define el avance del slider en este caso de 0.1 en 0.1
-
 
 
 if __name__=='__main__':

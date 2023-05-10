@@ -1,4 +1,4 @@
-#from dorna2 import dorna
+from dorna2 import Dorna
 import time
 import stop
 import threading
@@ -12,7 +12,7 @@ def p8678(self, v, a, tq, t1, t2):
     self.t1 = t1
     self.t2 = t2
 
-    robot = dorna()
+    robot = Dorna()
     ip = "dorna"
     port = 443
     robot.connect(ip, port)

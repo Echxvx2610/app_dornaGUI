@@ -1,0 +1,1 @@
+{"cmd":"alarm", "alarm":0}
