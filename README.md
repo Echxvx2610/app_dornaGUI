@@ -1,5 +1,9 @@
 #app_dornaGUI
 
+****************\\ Nota //******************
+En la carpeta app_dorna_v2 se esta trabajando en una actualización,del código en general debido a una actualización de software y API del dorna 2. Cuando se complete la actualización de este repositorio se descartarán los códigos obsoletos y estarán listos la versión 2.
+********************************************
+
 App GUI para robot dorna 2 (desarollada con python,pysimplegui)
 
 La Utilidad que se le dio al robot dorna fue apoyando en el proceso de frabicacion de PCB's SMD,colocando goma en la base de componentes SMD "pesados" que pueden moverse o caerse del PCB en el proceso final de Coccion de la soldadura.
