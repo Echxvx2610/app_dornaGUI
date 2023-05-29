@@ -5,7 +5,7 @@ import time
 
 
 # from test_p import puntos
-def p8678(v, a, tq, t1, t2):
+def p31974(v, a, tq, t1, t2):
    # self.v = v
    # self.a = a
    # self.t = tq

@@ -1,7 +1,7 @@
-#packages
+#Librerias y paquetes
 import threading
 import PySimpleGUI as sg
-#from my_thread import principal
+from my_thread import principal,stop_principal
 import time
 from threading import *
 #from p30538 import p30538
@@ -11,9 +11,8 @@ from dorna_home_v2 import homming
 from dorna_return_v2 import back
 from dorna_zero_v2 import cero
 from stop_v2 import stop
-#from p31516 import p31516
-
-
+from p31516 import p31516
+from p31974_v2 import p31974
 
 #sys
 def dorna_arm():
@@ -158,13 +157,15 @@ def dorna_arm():
         #***************************************************************\\Seleccion de programas//**********************************************************************************************
         if event == '-START-':
             if values ['-COMBO-'] == ['30538-1A']:
-                hilo2=threading.Thread(target=simulation)
+                hilo2=threading.Thread(target=simulation,daemon=True)
                 hilo2.start()
                 window ['-TEXTBOX-'].update('Zero set Iniciado' + '\n' ,append=True)
             elif values ['-COMBO-'] == ['8678-1A']:
-                simulation()
+                hilo3=threading.Thread(target=simulation)
+                hilo3.start()
             elif values ['-COMBO-'] == ['9104-1A']:
-                simulation()
+                hilo4=threading.Thread(target=simulation)
+                hilo4.start()
             elif values ['-COMBO-'] == ['26156-1E']:
                 #def ejecuta_hilo():
                  #    principal()
@@ -179,14 +180,30 @@ def dorna_arm():
                 # hilo = Thread(target=p31516(v=spd,a=accel,tq=torq,t=goma_ch,t2=goma_g))
                 # hilo.start()
         if event == '-ZERO-':
-            cero()
+            try:
+                cero()
+            except:
+                print("El programa no se puede ejecutar,falta conexion al robot")
             
         if event == '-INICIALIZAR-':
-            homming()
+            try:
+                homming()
+            except:
+                print("El programa no se puede ejecutar,falta conexion al robot")
             
         if event == '-REPOSO-':
-            back()
+            try:
+                back()
+            except:
+                print("El programa no se puede ejecutar,falta conexion al robot")
+                
+        if event == '-STOP-':
+            stop_simulation = False
+            stop_principal = True
+            window ['-TEXTBOX-'].update('Robot detenido' + '\n' + "Alarma activada..."+ '\n' ,append=True)
         
+        if event == '-RESET-':
+            window ['-TEXTBOX-'].update('Alarma reseteada' + '\n' ,append=True)
                   
     # fin del bucle
     window.close()
