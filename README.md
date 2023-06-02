@@ -1,8 +1,9 @@
-#app_dornaGUI
+# App_dornaGUI
 
-****************\\ Nota //****************
-En la carpeta app_dorna_v2 se esta trabajando en una actualización,del código en general debido a una actualización de software y API del dorna 2. Cuando se complete la actualización de este repositorio se descartarán los códigos obsoletos y estarán listos la versión 2.
-******************************************
+                               **************** \\ Nota // ****************
+
+En la carpeta app_dorna_v2 se esta trabajando en una actualización,del código en general debido a una actualización de software y API del dorna 2. Cuando se complete la actualización de este repositorio se descartarán los códigos obsoletos y estarán listos en la versión 2.
+*******************************************************************************************************************
 
 App GUI para robot dorna 2 (desarollada con python,pysimplegui)
 
@@ -11,5 +12,5 @@ La Utilidad que se le dio al robot dorna fue apoyando en el proceso de frabicaci
 <img src="https://github.com/Echxvx2610/app_dornaGUI/assets/99057175/fbae39de-4dce-405a-a2d1-35a6e5944803" width="600" heigth="600" />
 
 Dicha app funciona de la siguiente forma:
-Se generan los "programas" o scripts que utilizara el robot dorna,desde la GUI se selecciona el programa,se definen los parametros de Velocidad,Aceleracion,Torque,Tiempos de goma y empieza la ejecucion del programa,los programas en si consisten en
-coordenadas y llamadas a la API de Dorna 2, tambien se aplica el uso de hilos o pools de hilos para poder ejecutar un script en "segundo plano" y poder seguir controlando la GUI.
+
+Se generan los "programas" o scripts que utilizara el robot dorna,desde la GUI se selecciona el programa,se definen los parametros de Velocidad,Aceleracion,Torque,Tiempos de goma y empieza la ejecucion del programa,los programas en si consisten en coordenadas y llamadas a la API de Dorna 2, tambien se aplica el uso de hilos o pools de hilos para poder ejecutar un script en "segundo plano" y poder seguir controlando la GUI.
